@@ -1,0 +1,33 @@
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Calculator{
+    height: 600px;
+    width: 400px;
+    border: 3px solid #eee;
+}
+
+.number{
+    height: 50px;
+    width: 90px;
+    margin-top: 2px;
+}
+
+.zero{
+    width: 184px;
+}
+
+.btns{
+    margin-top: 40%;
+    text-align: center;
+}
+
+.user-input{
+    text-align: center;
+    padding-top: 100px;
+    
+}
