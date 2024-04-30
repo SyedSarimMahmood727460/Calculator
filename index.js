@@ -1,5 +1,7 @@
 const h2element=document.querySelector("h2")
-var answer=-1
+let answer=0
+let operator=""
+let operator_selected=false
 
 function calculation(num_1, operator, num_2) {
     var result;
@@ -19,31 +21,40 @@ function calculation(num_1, operator, num_2) {
         default:
             result = "Invalid operator";
     }
-    return result;
+    return result
 }
 
 
 
 function result()
 {
-    let userInput=h2element.textContent
-    let [num_1, operator, num_2] = userInput.split(/(\+|\-|\*|\/)/);
-
-    num_1=parseFloat(num_1)
-    num_1=parseFloat(num_1)
+    num_1=answer
+    num_2=parseFloat(h2element.textContent)
     answer=calculation(num_1,operator,num_2)
     h2element.textContent =answer;
 }
 
 function input(button)
 {
-    if(h2element.textContent==="Enter Your Values Here..." || parseFloat(h2element.textContent)===answer)
+    if (parseFloat(h2element.textContent) === 0 || operator_selected) 
     {
-        h2element.textContent ="";
+        operator_selected=false
+        h2element.textContent = button.textContent;
+        return;
+    }
+    else if( /^\d+$/.test(button.textContent))
+    {
         h2element.textContent += button.textContent;
     }
-    else{
-        h2element.textContent += button.textContent;
-    }
+}
 
+function Clear()
+{
+    h2element.textContent="0"
+}
+function Operator(button)
+{
+    answer = parseFloat(h2element.textContent)
+    operator_selected=true
+    operator = button.textContent
 }

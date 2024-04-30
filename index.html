@@ -9,25 +9,30 @@
 <body>
     <div class="Calculator">
         <div class="user-input">
-            <h2 class="input">Enter Your Values Here...</h2>
-            <hr>
+            <h2 class="input">0</h2>
         </div>
         <div class="btns">
+            <button class="number" onclick="Clear()">AC</button>
+            <button class="number">+/-</button>
+            <button class="number">%</button>
+            <button class="number" onclick="input(this)">/</button>
+
             <button class="number" onclick="input(this)">7</button>
             <button class="number" onclick="input(this)">8</button>
             <button class="number" onclick="input(this)">9</button>
-            <button class="number" onclick="input(this)">/</button>
+            <button class="number" onclick="Operator(this)">*</button>
+
             <button class="number" onclick="input(this)">4</button>
             <button class="number" onclick="input(this)">5</button>
             <button class="number" onclick="input(this)">6</button>            
-            <button class="number" onclick="input(this)">-</button>            
+            <button class="number" onclick="Operator(this)">-</button>            
 
             <button class="number" onclick="input(this)">1</button>
             <button class="number" onclick="input(this)">2</button>
             <button class="number" onclick="input(this)">3</button>
-            <button class="number" onclick="input(this)">+</button>
+            <button class="number" onclick="Operator(this)">+</button>
             <button class="number zero" onclick="input(this)">0</button>
-            <button class="number" onclick="input(this)">.</button>
+            <button class="number" onclick="Operator(this)">.</button>
             <button class="number" onclick="result()">=</button>
             
         </div>
