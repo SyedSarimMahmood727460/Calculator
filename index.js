@@ -2,7 +2,9 @@
 const h2element=document.querySelector("h2")
 let answer=0
 let operator=""
+let num_2=0
 let operator_selected=false
+let percent_selecetd=false
 
 function calculation(num_1, operator, num_2) {
     var result;
@@ -24,8 +26,6 @@ function calculation(num_1, operator, num_2) {
     }
     return result
 }
-
-
 
 function result()
 {
@@ -61,7 +61,11 @@ function Operator(button)
     buttonColor_onClick(button)
     answer = parseFloat(h2element.textContent)
     operator_selected=true
-    operator = button.textContent
+    if(percent_selecetd==false)
+    {
+        operator = button.textContent
+    }
+    percent_selecetd=false
 }
 
 function buttonColor_onClick(button)
@@ -71,6 +75,22 @@ function buttonColor_onClick(button)
     {
         button.style.backgroundColor = 'pink';
     }, 140);
+}
+
+function percent(button)
+{
+    percent_selecetd=true
+    Operator(button)
+    answer=answer/100
+    h2element.textContent = answer;
+}
+
+function changeSign(button)
+{
+    percent_selecetd=true
+    Operator(button)
+    answer=answer*(-1)
+    h2element.textContent = answer;
 }
 
 
