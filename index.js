@@ -1,3 +1,4 @@
+
 const h2element=document.querySelector("h2")
 let answer=0
 let operator=""
@@ -36,6 +37,7 @@ function result()
 
 function input(button)
 {
+    buttonColor_onClick(button)
     if (parseFloat(h2element.textContent) === 0 || operator_selected) 
     {
         operator_selected=false
@@ -46,15 +48,29 @@ function input(button)
     {
         h2element.textContent += button.textContent;
     }
+    
 }
 
-function Clear()
+function Clear(button)
 {
+    buttonColor_onClick(button)
     h2element.textContent="0"
 }
 function Operator(button)
 {
+    buttonColor_onClick(button)
     answer = parseFloat(h2element.textContent)
     operator_selected=true
     operator = button.textContent
 }
+
+function buttonColor_onClick(button)
+{
+    button.style.backgroundColor = 'lightgreen';
+    setTimeout(function() 
+    {
+        button.style.backgroundColor = 'pink';
+    }, 140);
+}
+
+
